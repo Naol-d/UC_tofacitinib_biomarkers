@@ -13,7 +13,7 @@ docker pull naolxi/pydeseq2:0.5.0
 docker pull naolxi/r-env:4.4.1
 docker pull naolxi/deeplearn:1
 ```
-**Conda environments** utilised used be imported using .yml files available in the 'conda_envs' folder 
+**Conda environments** utilised can be imported using .yml files available in the 'conda_envs' folder 
 
 ## How to Run
 Pipeline is modular, bash scripts have been provided for HPC friendly environments based on SLURM job scheduling. The order of execution can be identified in the Directory Structure 'src' subtree section below.
