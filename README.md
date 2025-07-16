@@ -31,49 +31,53 @@ UC_tofacitinib_biomarkers/
 ├── containers/
 │   ├── .gitkeep
 │   ├── cell_ranger/                            # Dockerfile for cell ranger container
-│   ├── python/                                 # Dockerfile to faciliate python alternative DEA; Machine Learning
-│   └── R/                                      # Dockerfile for R Environment used in RNA analysis
-├── data/                                       # Data is currently not publicly available (Access will available upon publication)
+│   ├── python/                                 # Dockerfile for Python‑based DEA & ML
+│   └── R/                                      # Dockerfile for R environment used in RNA analysis
+├── data/                                       # Data not publicly available (access on publication)
 │   └── .gitkeep
 └── src/
-    ├── bulkRNA_alignment/                      # BulkRNA alignment 
+    ├── bulkRNA_alignment/                      # Bulk RNA alignment
     │   └── scripts/
     │       ├── batch1_disease_alignment.sh
     │       ├── batch2_disease_alignment.sh
     │       ├── featureCounts.sh
     │       ├── generate_genome_indices.sh
     │       └── slurms/
-    ├── bulkRNA_prep/                           # Preprocessing of matrix data, batch correction, GSEA input pre-formatting
+    ├── bulkRNA_prep/                           # Matrix prep, batch correction, GSEA formatting
     │   └── scripts/
     │       ├── bulkRNA_prep.sh
     │       └── bulkRNA_prep.R
-    ├── bulkRNA_DEA/                            # Differential Expression Analysis, GO Enrichment, KEGG Pathway Enrichment
+    ├── bulkRNA_DEA/                            # DEA, GO & KEGG enrichment
     │   └── scripts/
     │       ├── analysis.sh
     │       └── DEG_analysis.R
-    ├── scRNA_alignment/                        
-    │   ├── download/                           # Retrieval of public scRNA datasets
+    ├── scRNA_alignment/                        # Retrieve & align scRNA data
+    │   ├── download/
     │   │   ├── dataset_1_ssr_list.txt
     │   │   ├── dataset1_download.sh
     │   │   ├── dataset_2_srr_list.txt
     │   │   └── dataset_2_download.sh
-    │   └── alignment/                          # File namming format processing and scRNA alignment
+    │   └── alignment/
     │       ├── build_ref.sh
     │       ├── rename_dataset_1_fastqs.sh
     │       ├── rename_dataset_2_fastqs.sh
     │       ├── scRNA_dataset1_alignment.sh
     │       └── scRNA_dataset2_alignment.sh
-    ├── scRNA_prep/                             # Preparation of scRNA reference matrix file for signature matrix generation (single cell processing)
+    ├── scRNA_prep/                             # Prep scRNA reference matrix for signatures
     │   └── scripts/
     │       ├── cibersortx_prep.R
     │       └── cibersortx_prep.sh
-    └── deconvolution/
-        └── cibersortx/                         # bulkRNA deconvolution using CIBERSORTX and cell population analysis  
-            ├── cell_proportion_analysis.R
-            ├── cibersortx_fractions.sh
-            ├── corrected_bulkRNA_prep.R
-            ├── proportion_analysis.sh
-            └── slurms/
+    └── deconvolution/                          
+        └── cibersortx/                        # bulkRNA deconvolution & cell‑type analysis
+            └── scripts/
+                ├── browser/                   # (Optional) Allows for web‑browser capabilities in a HPC environment required to generate a cibersortX token linked to a compute node's IP
+                │   └── browser.sh
+                ├── deconvolution_bulkRNA_prep.R
+                ├── deconvolution_bulkRNA_prep.sh
+                ├── cibersortx_fractions.sh
+                ├── cell_proportion_analysis.R
+                └── proportion_analysis.sh
+
 ``` 
 
 
